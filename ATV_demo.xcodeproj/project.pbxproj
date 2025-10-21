@@ -29,20 +29,64 @@
 		B2D4ADEC2EA73D050004B521 /* ATV_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATV_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B2D4AE242EA743600004B521 /* Exceptions for "Data" folder in "ATV_demo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Cache/MovieCache.swift,
+				DTOs/MovieDTO.swift,
+				Managers/MovieManager.swift,
+				Providers/MovieProvider.swift,
+			);
+			target = B2D4ADD42EA73D030004B521 /* ATV_demo */;
+		};
+		B2D4AE2D2EA744BD0004B521 /* Exceptions for "Presentation" folder in "ATV_demo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ViewModels/MovieListViewModel.swift,
+				Views/HeroHeaderView.swift,
+				Views/MovieListView.swift,
+				Views/MovieShelf.swift,
+			);
+			target = B2D4ADD42EA73D030004B521 /* ATV_demo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B2D4ADD72EA73D030004B521 /* ATV_demo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ATV_demo;
 			sourceTree = "<group>";
 		};
-		B2D4ADE52EA73D050004B521 /* ATV_demoTests */ = {
+		B2D4ADE52EA73D050004B521 /* Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ATV_demoTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		B2D4ADEF2EA73D050004B521 /* ATV_demoUITests */ = {
+		B2D4AE042EA73DDE0004B521 /* Domain */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ATV_demoUITests;
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B2D4AE052EA73DF00004B521 /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B2D4AE242EA743600004B521 /* Exceptions for "Data" folder in "ATV_demo" target */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B2D4AE062EA73DF40004B521 /* Presentation */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B2D4AE2D2EA744BD0004B521 /* Exceptions for "Presentation" folder in "ATV_demo" target */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B2D4AE1B2EA7414F0004B521 /* Infrastructure */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +119,12 @@
 		B2D4ADCC2EA73D030004B521 = {
 			isa = PBXGroup;
 			children = (
+				B2D4AE1B2EA7414F0004B521 /* Infrastructure */,
+				B2D4AE062EA73DF40004B521 /* Presentation */,
+				B2D4AE052EA73DF00004B521 /* Data */,
+				B2D4AE042EA73DDE0004B521 /* Domain */,
 				B2D4ADD72EA73D030004B521 /* ATV_demo */,
-				B2D4ADE52EA73D050004B521 /* ATV_demoTests */,
-				B2D4ADEF2EA73D050004B521 /* ATV_demoUITests */,
+				B2D4ADE52EA73D050004B521 /* Tests */,
 				B2D4ADD62EA73D030004B521 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +156,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				B2D4ADD72EA73D030004B521 /* ATV_demo */,
+				B2D4AE042EA73DDE0004B521 /* Domain */,
+				B2D4AE1B2EA7414F0004B521 /* Infrastructure */,
 			);
 			name = ATV_demo;
 			packageProductDependencies = (
@@ -131,7 +180,7 @@
 				B2D4ADE42EA73D050004B521 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B2D4ADE52EA73D050004B521 /* ATV_demoTests */,
+				B2D4ADE52EA73D050004B521 /* Tests */,
 			);
 			name = ATV_demoTests;
 			packageProductDependencies = (
@@ -152,9 +201,6 @@
 			);
 			dependencies = (
 				B2D4ADEE2EA73D050004B521 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				B2D4ADEF2EA73D050004B521 /* ATV_demoUITests */,
 			);
 			name = ATV_demoUITests;
 			packageProductDependencies = (
@@ -416,6 +462,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 18.6;
 			};
 			name = Debug;
 		};
@@ -445,6 +492,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 18.6;
 			};
 			name = Release;
 		};

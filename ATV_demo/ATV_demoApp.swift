@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ATV_demoApp: App {
+    private let container = DIContainer()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieListView(viewModel: container.makeMovieListViewModel())
         }
     }
 }
