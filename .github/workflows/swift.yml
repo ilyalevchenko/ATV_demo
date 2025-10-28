@@ -17,6 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: xcodebuild -scheme ATV_demo -destination 'platform=tvOS' build
+      run: xcodebuild -scheme ATV_demo -destination 'platform=tvOS Simulator,name=Apple TV' build
     - name: Run tests
-      run: swift test -v
+      run: xcodebuild -scheme ATV_demo -destination 'platform=tvOS Simulator,name=Apple TV' test
