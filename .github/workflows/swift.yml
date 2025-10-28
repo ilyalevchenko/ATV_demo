@@ -17,22 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Select Xcode version
-      run: sudo xcode-select -s /Applications/Xcode_16.1.app/Contents/Developer
-    
-    - name: List available simulators
-      run: xcrun simctl list devices tvOS
-    
-    - name: Create and boot tvOS simulator
-      run: |
-        # Create a new tvOS simulator
-        UDID=$(xcrun simctl create "Apple TV Test" "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p" "com.apple.CoreSimulator.SimRuntime.tvOS-18-0")
-        echo "Created simulator with UDID: $UDID"
-        # Boot the simulator
-        xcrun simctl boot $UDID
-        echo "SIMULATOR_UDID=$UDID" >> $GITHUB_ENV
-    
     - name: Build
-      run: xcodebuild -scheme ATV_demo -destination "platform=tvOS Simulator,id=$SIMULATOR_UDID" build
+      run: xcodebuild -scheme ATV_demo -destination 'generic/platform=tvOS Simulator' build CODE_SIGNING_ALLOWED=NO
+
     - name: Run tests
       run: xcodebuild -scheme ATV_demo -destination 'platform=tvOS Simulator,name=Apple TV' test
