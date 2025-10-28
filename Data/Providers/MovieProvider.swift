@@ -12,7 +12,7 @@ protocol MovieProviderProtocol {
 }
 
 final class MovieProvider: MovieProviderProtocol {
-    private let apiKey = "9df1890714b7821d692d2e1b904643f5" // You'll need to get a free API key
+    private let apiKey = "9df1890714b7821d692d2e1b904643f5" 
     private let baseURL = "https://api.themoviedb.org/3"
 
     func fetchMovies() async throws -> [MovieDTO] {
